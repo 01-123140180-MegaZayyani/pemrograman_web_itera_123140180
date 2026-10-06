@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini POS Kantin Kampus</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="topbar">
+            <h1>Kasir Kantin</h1>
+            <p>Catat belanja, hitung diskon, dan kembalian.</p>
+        </header>
+
+        <main class="layout">
+            <!-- FORM INPUT BARANG -->
+            <section class="panel">
+            <h2>Tambah barang</h2>
+            <form id="form-barang" novalidate>
+                <label for="nama">Nama barang</label>
+                <input type="text" id="nama" placeholder="Contoh: Buku Tulis">
+                <p class="error" id="error-nama"></p>
+
+                <label for="harga">Harga satuan (Rp)</label>
+                <input type="number" id="harga" placeholder="Minimal 500">
+                <p class="error" id="error-harga"></p>
+
+                <label for="qty">Jumlah (qty)</label>
+                <input type="number" id="qty" placeholder="Minimal 1">
+                <p class="error" id="error-qty"></p>
+
+                <button type="submit" class="btn primary">Tambah ke keranjang</button>
+            </form>
+            </section>
+
+            <!-- TABEL KERANJANG DAN KALKULATOR -->
+            <section class="panel wide">
+            <h2>Keranjang belanja</h2>
+            <div class="table-wrap">
+                <table>
+                <thead>
+                    <tr><th>No</th><th>Nama Barang</th><th>Harga Satuan</th><th>Qty</th><th>Subtotal</th><th>Aksi</th></tr>
+                </thead>
+                <tbody id="isi-keranjang"></tbody>
+                </table>
+            </div>
+            <p id="keranjang-kosong" class="empty">Keranjang masih kosong. Tambahkan barang lewat form.</p>
+
+            <div class="ringkasan">
+                <div class="baris">
+                    <span>Total belanja</span><strong id="total">Rp 0</strong>
+                </div>
+                <p class="info" id="info-diskon">
+                    Belanja di atas Rp 50.000 dapat diskon 10%<br>
+                </p>
+                <div class="baris">
+                    <span>Diskon</span>
+                    <strong id="diskon">Rp 0</strong>
+                </div>
+                <div class="baris besar">
+                    <span>Total akhir</span>
+                    <strong id="total-akhir">Rp 0</strong>
+                </div>
+                <div class="baris">
+                    <span>Uang bayar</span>
+                    <input type="number" id="bayar" placeholder="Nominal diterima">
+                </div>
+                <p class="info" id="info-bayar"></p>
+            </div>
+
+            <button id="btn-reset" class="btn danger">Transaksi baru</button>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>

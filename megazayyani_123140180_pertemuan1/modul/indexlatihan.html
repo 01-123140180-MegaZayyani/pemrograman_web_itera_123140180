@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan Pertemuan 1 - JavaScript Dasar</title>
+    <style>
+      /* ===== Warna tema ===== */
+      :root {
+        --bg: #f6f7f9;
+        --card: #ffffff;
+        --ink: #1d2433;
+        --muted: #5b6475;
+        --line: #d9dde5;
+        --accent: #2f5bd8;
+      }
+
+      body.dark {
+        --bg: #12161f;
+        --card: #1b2130;
+        --ink: #e8ebf2;
+        --muted: #9aa3b5;
+        --line: #2c3447;
+        --accent: #7aa2ff;
+      }
+
+      /* ===== Base layout ===== */
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 20px;
+        font-family: "Segoe UI", sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.5;
+      }
+
+      main {
+        max-width: 860px;
+        margin: 0 auto;
+      }
+
+      section {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 16px;
+      }
+
+      h1,
+      h2 {
+        margin-top: 0;
+      }
+
+      h3 {
+        margin-top: 0;
+      }
+
+      /* ===== Form controls ===== */
+      input,
+      button {
+        font: inherit;
+        padding: 7px 10px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: var(--card);
+        color: var(--ink);
+      }
+
+      button {
+        cursor: pointer;
+        background: var(--accent);
+        color: #ffffff;
+        border: 0;
+      }
+
+      button.sec {
+        background: transparent;
+        color: var(--accent);
+        border: 1px solid var(--accent);
+      }
+
+      button:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
+
+      /* ===== Reusable classes ===== */
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 8px 0;
+        align-items: center;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border-bottom: 1px solid var(--line);
+        padding: 6px;
+        text-align: left;
+      }
+
+      .out {
+        background: var(--bg);
+        border-radius: 6px;
+        padding: 8px 12px;
+        margin-top: 8px;
+        white-space: pre-line;
+        min-height: 1.5em;
+      }
+
+      .error {
+        color: #c62828;
+        font-size: 0.88rem;
+        min-height: 1.1em;
+        margin: 2px 0;
+      }
+
+      .done {
+        text-decoration: line-through;
+        color: var(--muted);
+      }
+
+      nav a {
+        margin-right: 12px;
+        color: var(--accent);
+      }
+
+      ul.clean {
+        list-style: none;
+        padding: 0;
+      }
+
+      ul.clean li {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        padding: 4px 0;
+      }
+
+      .latihan {
+        margin-bottom: 36px;
+      }
+
+      .latihan-title {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Latihan Pertemuan 1: JavaScript Dasar</h1>
+      <p>Nama: Mega Zayyani | NIM: 123140180</p>
+      <nav>
+        <a href="#latihan1">1. Variabel &amp; Kondisional</a>
+        <a href="#latihan2">2. Loop &amp; Fungsi</a>
+        <a href="#latihan3">3. Array &amp; Objek</a>
+        <a href="#latihan4">4. DOM &amp; API</a>
+      </nav>
+      <hr />
+
+      <!-- Latihan 1: Variabel & Kondisional -->
+      <div class="latihan" id="latihan1">
+        <h2>Latihan 1: Variabel &amp; Kondisional</h2>
+
+        <section>
+          <h3>1. Data diri (const &amp; let)</h3>
+          <div class="out" id="l1-data-diri"></div>
+        </section>
+
+        <section>
+          <h3>2-5. Kondisional</h3>
+          <div class="row">
+            <input type="number" id="l1-nilai" placeholder="Nilai (0-100)" />
+            <input type="number" id="l1-umur" placeholder="Umur" />
+            <input type="number" id="l1-hari" placeholder="Hari (1-7)" />
+            <button type="button" id="l1-btn-proses">Proses</button>
+          </div>
+          <div class="out" id="l1-hasil"></div>
+          <p class="caption">
+            Catatan: <br> Nilai >= 90 = A, <br> 80-89 = B, <br> 70-79 = C, <br> 60-69 = D, <br> di bawah 60 = E.
+          </p>
+        </section>
+      </div>
+
+      <!-- Latihan 2: Loop & Fungsi -->
+      <div class="latihan" id="latihan2">
+        <h2>Latihan 2: Loop &amp; Fungsi</h2>
+
+        <section>
+          <h3>Tabel perkalian, faktorial, bilangan prima</h3>
+          <div class="row">
+            <input type="number" id="l2-angka" placeholder="Masukkan angka" />
+            <button type="button" id="l2-btn-kali">Tabel perkalian</button>
+            <button type="button" id="l2-btn-faktorial">Faktorial</button>
+            <button type="button" id="l2-btn-prima">Cek prima</button>
+          </div>
+          <div class="out" id="l2-hasil-angka"></div>
+        </section>
+
+        <section>
+          <h3>Kalkulator BMI</h3>
+          <div class="row">
+            <input type="number" id="l2-berat" placeholder="Berat (kg)" />
+            <input type="number" id="l2-tinggi" placeholder="Tinggi (cm)" />
+            <button type="button" id="l2-btn-bmi">Hitung BMI</button>
+          </div>
+          <div class="out" id="l2-hasil-bmi"></div>
+        </section>
+
+        <section>
+          <h3>FizzBuzz 1-100</h3>
+          <button type="button" id="l2-btn-fizz">Tampilkan</button>
+          <div class="out" id="l2-hasil-fizz"></div>
+        </section>
+      </div>
+
+      <!-- Latihan 3: Array & Objek -->
+      <div class="latihan" id="latihan3">
+        <h2>Latihan 3: Array &amp; Objek</h2>
+
+        <section>
+          <h3>Data mahasiswa</h3>
+          <div class="row">
+            <button type="button" class="sec" id="l3-btn-semua">Semua</button>
+            <button type="button" class="sec" id="l3-btn-atas">Di atas rata-rata</button>
+            <button type="button" class="sec" id="l3-btn-asc">Nama A-Z</button>
+            <button type="button" class="sec" id="l3-btn-desc">Nama Z-A</button>
+            <button type="button" class="sec" id="l3-btn-tertinggi">Nilai tertinggi</button>
+          </div>
+          <div class="out" id="l3-info"></div>
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>NIM</th>
+                <th>Jurusan</th>
+                <th>Nilai</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="l3-tabel"></tbody>
+          </table>
+        </section>
+
+        <section>
+          <h3 id="l3-judul-form">Tambah mahasiswa (Create)</h3>
+          <form id="l3-form" novalidate>
+            <div class="row">
+              <input type="text" id="l3-nama" placeholder="Nama" />
+              <input type="text" id="l3-nim" placeholder="NIM" />
+              <input type="text" id="l3-jurusan" placeholder="Jurusan" />
+              <input type="number" id="l3-nilai" placeholder="Nilai 0-100" />
+              <button type="submit" id="l3-btn-simpan">Tambah</button>
+              <button type="button" class="sec" id="l3-btn-batal" hidden>Batal</button>
+            </div>
+            <p class="error" id="l3-error"></p>
+          </form>
+        </section>
+      </div>
+
+      <!-- Latihan 4: DOM & API -->
+      <div class="latihan" id="latihan4">
+        <div class="row">
+          <h2 class="latihan-title">Latihan 4: DOM &amp; API</h2>
+          <button type="button" id="l4-btn-tema" class="sec">Dark mode</button>
+        </div>
+
+        <section>
+          <h3>1-2. Form mahasiswa + localStorage</h3>
+          <form id="l4-form-mhs" novalidate>
+            <div class="row">
+              <input type="text" id="l4-mhs-nama" placeholder="Nama" />
+              <input type="text" id="l4-mhs-nim" placeholder="NIM (9 digit)" />
+              <input type="text" id="l4-mhs-jurusan" placeholder="Jurusan" />
+              <button type="submit">Tambah</button>
+            </div>
+            <p class="error" id="l4-mhs-error"></p>
+          </form>
+          <ul class="clean" id="l4-mhs-list"></ul>
+        </section>
+
+        <section>
+          <h3>3 &amp; 5. Daftar post API: cari title + pagination</h3>
+          <div class="row">
+            <input type="text" id="l4-cari" placeholder="Cari berdasarkan title..." />
+          </div>
+          <div id="l4-post-list"></div>
+          <div class="row">
+            <button type="button" id="l4-btn-prev" class="sec">Previous</button>
+            <span id="l4-halaman"></span>
+            <button type="button" id="l4-btn-next" class="sec">Next</button>
+          </div>
+        </section>
+
+        <section>
+          <h3>6. Todo list</h3>
+          <form id="l4-form-todo">
+            <div class="row">
+              <input type="text" id="l4-todo-input" placeholder="Tugas baru" />
+              <button type="submit">Tambah</button>
+            </div>
+          </form>
+          <ul class="clean" id="l4-todo-list"></ul>
+        </section>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,212 @@
+/* Varian warna */
+:root {
+  --bg: #eef1ec;
+  --panel: #fffefb;
+  --ink: #1f2a24;
+  --muted: #5f6d64;
+  --line: #d6dcd3;
+  --orange: #f57c00;
+  --red: #b3261e;
+  --amber: #8a5a00;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+.topbar {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 20px 8px;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.topbar p {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  align-items: start;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 20px 40px;
+}
+
+.panel {
+  padding: 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.panel h2 {
+  margin: 0 0 14px;
+  font-size: 1.15rem;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 9px 10px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font: inherit;
+}
+
+input:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid #7fb89b;
+  outline-offset: 1px;
+}
+
+input.invalid {
+  border-color: var(--red);
+}
+
+.error {
+  min-height: 1.2em;
+  margin: 4px 0 0;
+  color: var(--red);
+  font-size: 0.85rem;
+}
+
+.btn {
+  margin-top: 12px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 6px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn.primary {
+  width: 100%;
+  background: var(--orange);
+  color: #fff;
+}
+
+.btn.danger {
+  background: var(--red);
+  color: #fff;
+}
+
+.btn.small {
+  margin: 0;
+  padding: 5px 10px;
+  background: #fff;
+  border: 1px solid var(--red);
+  color: var(--red);
+  font-size: 0.85rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 9px 8px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+th {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+td.angka,
+th.angka {
+  text-align: right;
+}
+
+.empty {
+  margin: 16px 0;
+  color: var(--muted);
+  text-align: center;
+}
+
+.ringkasan {
+  margin-top: 18px;
+  padding: 14px 16px;
+  background: #fafaf5;
+  border: 1px dashed var(--muted);
+  border-radius: 8px;
+}
+
+.baris {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 0;
+}
+
+.baris input {
+  max-width: 200px;
+  text-align: right;
+}
+
+.baris.besar {
+  margin-top: 6px;
+  padding-top: 10px;
+  border-top: 2px solid var(--ink);
+  font-size: 1.3rem;
+}
+
+.info {
+  margin: 2px 0 6px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.info.ok {
+  color: var(--green);
+  font-weight: 600;
+}
+
+.info.warn {
+  color: var(--amber);
+  font-weight: 600;
+}
+
+.info.bad {
+  color: var(--red);
+  font-weight: 600;
+}
+
+@media (max-width: 820px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
