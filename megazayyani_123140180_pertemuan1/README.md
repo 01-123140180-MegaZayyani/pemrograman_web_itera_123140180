@@ -33,12 +33,15 @@ Aplikasi web kasir sederhana untuk kantin kampus. Kasir memasukkan barang, aplik
 
 ## Tangkapan Layar (Screenshot)
 1. Form input utama
+
 ![Form input utama](screenshots/inputform.png)
 
 2. Tampilan validasi error
+
 ![Validasi error](screenshots/errorinput.png)
 
 3. Hasil kalkulator dan tabel keranjang
+
 ![Hasil kalkulator dan tabel keranjang](screenshots/kalkulatorkeranjang.png)
 
 ## Penjelasan Teknis Singkat
