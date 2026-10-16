@@ -1,0 +1,269 @@
+:root {
+  --bg: #e9edf4;
+  --surface: #fff;
+  --ink: #18212f;
+  --muted: #5b6880;
+  --line: #d5dbe7;
+  --accent: #2446d6;
+  --soft: #e4eaff;
+  --late: #c2410c;
+  --warn: #b7791f;
+  --ok: #0f766e;
+  font-family: "Plus Jakarta Sans",
+               system-ui,
+               sans-serif;
+  color: var(--ink);
+}
+
+* {
+  box-sizing: border-box; margin: 0;
+}
+
+body {
+  padding: clamp(1rem,3vw,2.5rem); line-height: 1.5; background: var(--bg);
+}
+
+.top,
+.grid {
+  max-width: 1180px; margin-inline: auto;
+}
+
+.top {
+  display: grid; align-items: end; grid-template-columns: 1.2fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: clamp(2rem,5vw,3.4rem); font-weight: 800; line-height: 1.05; letter-spacing: -.03em;
+}
+
+h2 {
+  font-size: 1.15rem; font-weight: 700;
+}
+
+.muted,
+.meta {
+  font-size: .85rem; color: var(--muted);
+}
+
+.clock {
+  margin-right: .5rem; font-size: 1.3rem; font-weight: 700; font-variant-numeric: tabular-nums;
+}
+
+.glance {
+  display: grid; gap: .75rem;
+}
+
+.weather,
+.quote {
+  padding: .75rem 1rem; border: 1px solid var(--line); border-radius: 14px; font-size: .9rem; background: var(--surface);
+}
+
+.weather strong {
+  font-size: 1.5rem;
+}
+
+.quote blockquote {
+  font-style: italic;
+}
+
+.quote figcaption {
+  margin-top: .25rem; font-size: .8rem; color: var(--muted);
+}
+
+.grid {
+  display: grid; grid-template-columns: 1fr 1.15fr; grid-template-areas: "tasks schedule" "reminders schedule" "notes notes"; gap: 1.25rem;
+}
+
+.a-tasks {
+  grid-area: tasks;
+}
+
+.a-schedule {
+  grid-area: schedule;
+}
+
+.a-reminders {
+  grid-area: reminders;
+}
+
+.a-notes {
+  grid-area: notes;
+}
+
+.card {
+  display: flex; flex-direction: column; gap: .75rem; min-width: 0; padding: 1.25rem; border: 1px solid var(--line); border-radius: 14px; background: var(--surface);
+}
+
+.row {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .5rem;
+}
+
+.form {
+  display: flex; flex-wrap: wrap; gap: .5rem;
+}
+
+input,
+select,
+textarea {
+  flex: 1 1 130px; min-width: 0; padding: .5rem .65rem; border: 1px solid var(--line); border-radius: 8px; font: inherit; font-size: .9rem; color: inherit; background: #fff;
+}
+
+textarea {
+  flex-basis: 100%; resize: vertical;
+}
+
+.btn {
+  padding: .5rem 1rem; border: 0; border-radius: 8px; font: inherit; font-size: .9rem; font-weight: 700; color: #fff; background: var(--accent); cursor: pointer;
+}
+
+.btn:hover {
+  background: #1a37b0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px;
+}
+
+.filters {
+  display: flex; gap: .25rem;
+}
+
+.filters button {
+  padding: .25rem .65rem; border: 1px solid var(--line); border-radius: 999px; font: inherit; font-size: .8rem; background: none; cursor: pointer;
+}
+
+.filters button[aria-pressed=true] {
+  border-color: var(--accent); font-weight: 700; color: var(--accent); background: var(--soft);
+}
+
+.list {
+  display: grid; gap: .5rem; padding: 0; list-style: none;
+}
+
+.task,
+.rem {
+  display: grid; align-items: center; grid-template-columns: auto 1fr auto; gap: .75rem; padding: .6rem .75rem; border: 1px solid var(--line); border-left: 4px solid var(--warn); border-radius: 8px;
+}
+
+.task[data-prio=tinggi] {
+  border-left-color: var(--late);
+}
+
+.task[data-prio=rendah] {
+  border-left-color: var(--ok);
+}
+
+.item-title {
+  font-weight: 600; overflow-wrap: anywhere;
+}
+
+.is-done .item-title {
+  text-decoration: line-through; color: var(--muted);
+}
+
+.is-late .meta {
+  font-weight: 700; color: var(--late);
+}
+
+.acts {
+  display: flex; gap: .25rem;
+}
+
+.acts button,
+.x {
+  padding: .15rem .3rem; border: 0; font: inherit; font-size: .75rem; color: var(--accent); background: none; cursor: pointer;
+}
+
+.empty {
+  padding: .5rem 0; font-size: .9rem; color: var(--muted);
+}
+
+.rem {
+  border-left-color: var(--accent);
+}
+
+.rem.is-soon {
+  border-left-color: var(--late);
+}
+
+.rem.is-past {
+  opacity: .55;
+}
+
+.count {
+  min-width: 4.5rem; font-weight: 800; font-variant-numeric: tabular-nums;
+}
+
+.is-soon .count {
+  color: var(--late);
+}
+
+.timeline {
+  position: relative; margin-top: .5rem;
+}
+
+.hour {
+  position: absolute; right: 0; left: 0; border-top: 1px solid var(--line);
+}
+
+.hour span {
+  position: absolute; top: -.65rem; left: 0; padding-right: .25rem; font-size: .7rem; color: var(--muted); background: var(--surface);
+}
+
+.track {
+  position: absolute; inset: 0 0 0 52px;
+}
+
+.block {
+  position: absolute; display: flex; overflow: hidden; padding: 2px 4px; border-left: 4px solid var(--c); border-radius: 6px; background: color-mix(in srgb,var(--c) 14%,#fff); --c: var(--accent);
+}
+
+.block[data-cat=praktikum] {
+  --c: #7c3aed;
+}
+
+.block[data-cat=belajar] {
+  --c: var(--ok);
+}
+
+.block[data-cat=pribadi] {
+  --c: var(--warn);
+}
+
+.block-main {
+  display: flex; flex: 1; flex-direction: column; min-width: 0; border: 0; font: inherit; font-size: .78rem; text-align: left; color: inherit; background: none; cursor: pointer;
+}
+
+.block-main span {
+  font-size: .72rem; color: var(--muted);
+}
+
+.now {
+  position: absolute; right: 0; left: 0; z-index: 2; border-top: 2px solid var(--late);
+}
+
+.now::before {
+  content: ""; position: absolute; top: -6px; left: -5px; width: 10px; height: 10px; border-radius: 50%; background: var(--late);
+}
+
+.notes {
+  display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: .75rem;
+}
+
+.note {
+  display: grid; gap: .25rem; padding: .75rem; border: 1px solid var(--line); border-top: 4px solid var(--accent); border-radius: 8px; font-size: .9rem;
+}
+
+.note[data-tag=harian] {
+  border-top-color: var(--warn);
+}
+
+@media (max-width:880px) {
+  .top {
+    grid-template-columns: 1fr;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; grid-template-areas: "tasks" "schedule" "reminders" "notes";
+  }
+}

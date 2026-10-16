@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Kuliah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <div>
+      <p id="today" class="muted"></p>
+      <h1>Dashboard Kuliah</h1>
+      <p><span id="clock" class="clock"></span> <span id="summary" class="muted"></span></p>
+    </div>
+    <div class="glance">
+      <div id="weather" class="weather">Memuat cuaca…</div>
+      <figure id="quote" class="quote">Memuat kutipan…</figure>
+    </div>
+  </header>
+
+  <main class="grid">
+    <section class="card a-tasks" aria-labelledby="h-tasks">
+      <h2 id="h-tasks">Tugas</h2>
+      <form id="task-form" class="form">
+        <input type="hidden" name="id">
+        <input name="title" placeholder="Tugas baru" required>
+        <input name="deadline" type="date" aria-label="Tenggat" required>
+        <select name="priority" aria-label="Prioritas">
+          <option value="rendah">Rendah</option><option value="sedang" selected>Sedang</option><option value="tinggi">Tinggi</option>
+        </select>
+        <button type="submit" class="btn">Tambah tugas</button>
+      </form>
+      <div class="filters" id="task-filter">
+        <button data-filter="all" aria-pressed="true">Semua</button>
+        <button data-filter="active" aria-pressed="false">Aktif</button>
+        <button data-filter="done" aria-pressed="false">Selesai</button>
+      </div>
+      <ul id="task-list" class="list"></ul>
+    </section>
+
+    <section class="card a-schedule" aria-labelledby="h-schedule">
+      <div class="row">
+        <h2 id="h-schedule">Jadwal</h2>
+        <div id="day-nav" class="filters">
+          <button data-step="-1" aria-label="Hari sebelumnya">‹</button>
+          <button data-step="0">Hari ini</button>
+          <button data-step="1" aria-label="Hari berikutnya">›</button>
+        </div>
+      </div>
+      <p id="day-label" class="muted"></p>
+      <form id="block-form" class="form">
+        <input type="hidden" name="id">
+        <input name="title" placeholder="Kegiatan" required>
+        <input name="start" type="time" min="06:00" max="21:59" aria-label="Mulai" required>
+        <input name="end" type="time" min="06:00" max="22:00" aria-label="Selesai" required>
+        <select name="category" aria-label="Kategori">
+          <option value="kuliah">Kuliah</option><option value="praktikum">Praktikum</option><option value="belajar">Belajar</option><option value="pribadi">Pribadi</option>
+        </select>
+        <button type="submit" class="btn">Tambah blok</button>
+      </form>
+      <div id="timeline" class="timeline"></div>
+    </section>
+
+    <section class="card a-reminders" aria-labelledby="h-rem">
+      <h2 id="h-rem">Tanggal penting</h2>
+      <form id="reminder-form" class="form">
+        <input type="hidden" name="id">
+        <input name="title" placeholder="Misal: UTS Pemrograman Web" required>
+        <input name="date" type="date" aria-label="Tanggal" required>
+        <button type="submit" class="btn">Tambah pengingat</button>
+      </form>
+      <ul id="reminder-list" class="list"></ul>
+    </section>
+
+    <section class="card a-notes" aria-labelledby="h-notes">
+      <h2 id="h-notes">Catatan singkat</h2>
+      <form id="note-form" class="form">
+        <input type="hidden" name="id">
+        <input name="title" placeholder="Judul catatan" required>
+        <select name="tag" aria-label="Jenis"><option value="kuliah">Kuliah</option><option value="harian">Harian</option></select>
+        <textarea name="body" rows="2" placeholder="Isi catatan"></textarea>
+        <button type="submit" class="btn">Simpan catatan</button>
+      </form>
+      <div id="note-list" class="notes"></div>
+    </section>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
