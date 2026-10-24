@@ -1,0 +1,40 @@
+.home-layout {
+  display: grid;
+  align-items: start;
+  grid-template-columns: 340px 1fr;
+  gap: 1.5rem;
+  padding-bottom: 3rem;
+}
+
+.home-sidebar {
+  position: sticky;
+  top: 1rem;
+}
+
+.home-content {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.result-count {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.notice {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  color: var(--cream);
+  background: var(--green);
+}
+
+@media (max-width: 800px) {
+  .home-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .home-sidebar {
+    position: static;
+  }
+}

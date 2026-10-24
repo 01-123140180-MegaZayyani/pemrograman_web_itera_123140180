@@ -1,0 +1,31 @@
+.book-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  border-left: 6px solid var(--green);
+  border-radius: var(--radius);
+  background: var(--peach);
+  box-shadow: var(--shadow);
+}
+
+.book-info {
+  display: grid;
+  gap: 0.2rem;
+  justify-items: start;
+}
+
+.book-title {
+  font-size: 1.1rem;
+}
+
+.book-author {
+  font-size: 0.95rem;
+}
+
+.book-actions {
+  display: flex;
+  gap: 0.5rem;
+}

@@ -1,0 +1,54 @@
+.book-filter {
+  display: grid;
+  gap: 0.8rem;
+  padding: 1rem;
+  border: 2px solid var(--peach);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.search-box label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border: 2px solid var(--peach);
+  border-radius: 8px;
+  font: inherit;
+  color: var(--brown);
+  background: #fff;
+}
+
+.search-box input:focus {
+  border-color: var(--green); outline: none;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  padding: 0.35rem 0.9rem;
+  border: 2px solid var(--green);
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 600;
+  color: var(--green);
+  background: transparent;
+  cursor: pointer;
+}
+
+.filter-btn:hover {
+  background: var(--peach);
+}
+
+.filter-btn.active {
+  color: var(--cream);
+  background: var(--green);
+}

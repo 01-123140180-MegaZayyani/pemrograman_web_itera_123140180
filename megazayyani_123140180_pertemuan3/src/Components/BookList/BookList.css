@@ -1,0 +1,12 @@
+.book-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.book-list-empty {
+  padding: 2rem 1rem;
+  border: 2px dashed var(--brown);
+  border-radius: var(--radius);
+  text-align: center;
+  opacity: 0.85;
+}

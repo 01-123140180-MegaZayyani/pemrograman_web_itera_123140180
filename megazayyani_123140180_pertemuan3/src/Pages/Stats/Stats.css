@@ -1,0 +1,119 @@
+.stats-page {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.stats-total {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--green);
+  border-radius: 6px;
+  font-weight: 700;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.stats-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--peach);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.stats-table th,
+.stats-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--peach);
+}
+
+.stats-table thead {
+  color: var(--cream);
+  background: var(--green);
+}
+
+.stats-table thead th {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.stats-table tbody tr:hover {
+  background: #fff4ec;
+}
+
+.stats-table tbody th {
+  font-weight: 600;
+}
+
+.stats-table .stats-count,
+.stats-table .stats-percentage {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--green);
+}
+
+.stats-table tfoot {
+  font-weight: 700;
+  background: var(--cream);
+}
+
+.stats-table tfoot th,
+.stats-table tfoot td {
+  border-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .stats-table {
+    table-layout: fixed;
+  }
+
+  .stats-table th,
+  .stats-table td {
+    padding: 0.7rem 0.5rem;
+    overflow-wrap: anywhere;
+  }
+
+  .stats-table thead th {
+    font-size: 0.8rem;
+  }
+
+  .stats-table tbody th,
+  .stats-table tfoot th {
+    width: 42%;
+  }
+
+  .stats-table tbody td,
+  .stats-table tfoot td {
+    width: 29%;
+  }
+
+  .stats-table .stats-count,
+  .stats-table .stats-percentage {
+    font-size: 1rem;
+  }
+
+  .stats-table .badge {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .stats-table th,
+  .stats-table td {
+    padding: 0.6rem 0.35rem;
+    font-size: 0.85rem;
+  }
+
+  .stats-table thead th {
+    font-size: 0.75rem;
+  }
+}

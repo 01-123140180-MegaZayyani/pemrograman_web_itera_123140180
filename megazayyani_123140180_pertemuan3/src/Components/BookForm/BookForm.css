@@ -1,0 +1,58 @@
+.book-form {
+  padding: 1.25rem;
+  border: 2px solid var(--peach);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.book-form h2 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.form-group {
+  margin-bottom: 0.9rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border: 2px solid var(--peach);
+  border-radius: 8px;
+  font: inherit;
+  color: var(--brown);
+  background: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--green); outline: none;
+}
+
+/* Feedback visual saat input kosong / tidak valid */
+.form-group .input-error {
+  border-color: var(--error);
+  background: #fdeeea;
+}
+
+.field-error {
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--error);
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
